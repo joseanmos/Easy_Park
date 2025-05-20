@@ -43,6 +43,12 @@ The HC-SR04 ultrasonic sensor emits ultrasonic pulses and listens for echoes. Th
 3. Alerts are triggered based on object proximity
 4. Optional modules demonstrate use cases like traffic monitoring
 
+## Demo Video
+
+Watch a demonstration of the sensor in action:
+
+[▶️ YouTube Video](https://youtu.be/tfAopmKWjGw)
+
 ## Project Report
 
 Detailed documentation including diagrams, component explanations, use-case simulations, and source code is available in the report:
