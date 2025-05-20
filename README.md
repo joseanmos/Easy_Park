@@ -1,76 +1,56 @@
 # Easy_Park
 
-# 🚗 EasyPark – Smart Parking Assistance System
+# EasyPark – Smart Parking Assistance System
 
-EasyPark is an embedded systems mini-project developed to assist in safe and efficient reverse parking using ultrasonic distance measurement. Built using the **LPC1768 ARM Cortex-M3** microcontroller and the **HC-SR04 ultrasonic sensor**, the system provides both **visual** and **audio** cues to help prevent collisions.
+**EasyPark** is an embedded systems mini-project designed to assist with safe and efficient vehicle parking. It uses ultrasonic distance measurement and provides both visual and auditory feedback to help prevent collisions.
 
-## 🔧 Features
+## Features
 
-* Real-time distance measurement (accuracy up to 3mm)
-* 16x2 LCD display for live distance feedback
-* Visual alert system using LEDs
-* Buzzer alert when object is dangerously close (< 20 cm)
-* Password-protected system startup
-* Additional simulation features:
+- Real-time distance measurement (up to 3mm accuracy)
+- 16x2 LCD display showing live distance data
+- Visual alert system using multiple LEDs
+- Buzzer alert when an object is dangerously close (< 20 cm)
 
-  * Blind spot/rear detection
-  * Traffic flow counting
-  * Smart speed bump violation alert
-  * Forward obstacle prevention
+## Hardware Used
 
-## 🧰 Hardware Used
+- LPC1768 ARM Cortex-M3 Microcontroller
+- HC-SR04 Ultrasonic Sensor
+- 16x2 Character LCD
+- 8 LEDs (connected to GPIO)
+- Buzzer
+- Power supply (5V regulated)
+- Jumper wires and connectors
 
-* LPC1768 Microcontroller
-* HC-SR04 Ultrasonic Sensor
-* 16x2 LCD Display
-* 8 LEDs (distance indicators)
-* Buzzer
-* Power Supply (5V regulated)
-* Connecting cables (FRC, jumper wires)
+## Software & Tools
 
-## 🖥️ Software & Tools
+- Keil uVision IDE
+- Embedded C
+- LPC1768 peripheral libraries
+- NXP documentation
 
-* Keil uVision IDE
-* Embedded C
-* NXP Documentation & Libraries
+## Working Principle
 
-## 🧠 Working Principle
+The HC-SR04 ultrasonic sensor emits ultrasonic pulses and listens for echoes. The LPC1768 measures the time delay to calculate distance. The system uses this data to:
 
-The HC-SR04 sensor sends ultrasonic waves which reflect off obstacles. The LPC1768 measures the time taken for the echo to return and calculates the distance using the speed of sound. Based on this data:
+- Display distance on the LCD
+- Trigger LEDs in sequence based on proximity
+- Activate a buzzer if the object is too close
 
-* The **LCD** displays distance.
-* **LEDs** light up progressively as the object nears.
-* The **buzzer** activates when distance < 20 cm.
+## System Flow
 
-## 📐 System Flow
+1. System initializes 
+2. Once authenticated, it begins continuous distance monitoring
+3. Alerts are triggered based on object proximity
+4. Optional modules demonstrate use cases like traffic monitoring
 
-1. System initialization
-2. Password authentication via keypad
-3. Continuous distance monitoring
-4. Alerts triggered based on distance
-5. Optional simulation modules for traffic and safety use-cases
+## Project Report
 
-## 📸 Demonstration
+Detailed documentation including diagrams, component explanations, use-case simulations, and source code is available in the report:
 
-Check the project report (`Group9_ES_merged.pdf`) for:
+[📄 Group9_ES_merged.pdf](./docs/Group9_ES_merged.pdf)
 
-* Circuit diagrams
-* Flow diagrams
-* Hardware setup photographs
+## Repository Structure
 
-## 🧾 Documentation
-
-📄 **Project Report**: [Group9\_ES\_merged.pdf](./Group9_ES_merged.pdf)
-
-This includes:
-
-* Full component descriptions
-* Circuit schematics
-* Code explanation
-* Use-case simulations
-* Photographs and results
-
-## 📂 Repository Structure
 
 ```
 EasyPark/
